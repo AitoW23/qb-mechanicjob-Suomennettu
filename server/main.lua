@@ -228,18 +228,18 @@ end)
 -- Commands
 
 QBCore.Commands.Add("setvehiclestatus", "Set Vehicle Status", {{
-    name = "part",
-    help = "Type The Part You Want To Edit"
+    name = "Osa",
+    help = "Kirjoita osa jonka haluat korjata"
 }, {
-    name = "amount",
-    help = "The Percentage Fixed"
+    name = "Määrä",
+    help = "Prosenntimäärä korjattuna"
 }}, true, function(source, args)
     local part = args[1]:lower()
     local level = tonumber(args[2])
     TriggerClientEvent("vehiclemod:client:setPartLevel", source, part, level)
 end, "god")
 
-QBCore.Commands.Add("setmechanic", "Give Someone The Mechanic job", {{
+QBCore.Commands.Add("setmechanic", "Rekrytoi", {{
     name = "id",
     help = "ID Of The Player"
 }}, false, function(source, args)
@@ -252,9 +252,9 @@ QBCore.Commands.Add("setmechanic", "Give Someone The Mechanic job", {{
             if TargetData ~= nil then
                 TargetData.Functions.SetJob("mechanic")
                 TriggerClientEvent('QBCore:Notify', TargetData.PlayerData.source,
-                    "You Were Hired As An Autocare Employee!")
+                    "Sinut on palkattu mekaanikon toimesta!")
                 TriggerClientEvent('QBCore:Notify', source, "You have (" .. TargetData.PlayerData.charinfo.firstname ..
-                    ") Hired As An Autocare Employee!")
+                    ") Hired As An Autoca")
             end
         else
             TriggerClientEvent('QBCore:Notify', source, "You Must Provide A Player ID!")
